@@ -1,0 +1,32 @@
+distance_mi = 0
+is_raining = False
+has_bike = True
+has_car = True
+has_ride_share_app = True
+
+# 1. Check for falsy distance first (0 or None)
+if not distance_mi:
+    print("False")
+
+# 2. Distance 1 mile or less
+elif distance_mi <= 1:
+    if not is_raining:
+        print("True")
+    else:
+        print("False")
+
+# 3. Distance between 1 and 6 miles
+elif distance_mi <= 6:
+    # Must have a bike AND it must not be raining
+    if has_bike and not is_raining:
+        print("True")
+    else:
+        print("False")
+
+# 4. Distance greater than 6 miles
+else:
+    # Must have a car OR a ride share app
+    if has_car or has_ride_share_app:
+        print("True")
+    else:
+        print("False")
